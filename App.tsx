@@ -1,12 +1,86 @@
+import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Alert,
+  SafeAreaView,
+  ScrollView,
+  TouchableOpacity,
+  Image,
+  Platform,
+} from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function App() {
+  const handleCustomPress = () => {
+    Alert.alert("Button Pressed.");
+  };
   return (
-    <View style={styles.container}>
-      <Text>Hello World</Text>
+    <SafeAreaView style={styles.container}>
+      {/* Header */}
+      <View style={styles.header}>
+        <View style={styles.headerLeft}>
+          <Ionicons name="logo-youtube" size={32} color="red" />
+          <Text style={styles.youtubeText}>YouTube</Text>
+        </View>
+        <View style={styles.headerRight}>
+          <TouchableOpacity style={styles.iconButton}>
+            <Ionicons name="notifications-outline" size={24} color="black" />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.iconButton}>
+            <Ionicons name="search" size={24} color="black" />
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      {/* Categories */}
+      <View style={styles.categoriesContainer}>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.categories}
+        >
+          <TouchableOpacity
+            style={[styles.categoryButton, styles.selectedCategory]}
+          >
+            <Text style={[styles.categoryText, styles.selectedCategoryText]}>
+              All
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.categoryButton}>
+            <Text style={styles.categoryText}>Trending</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.categoryButton}>
+            <Text style={styles.categoryText}>Music</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.categoryButton}>
+            <Text style={styles.categoryText}>Gaming</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.categoryButton}>
+            <Text style={styles.categoryText}>News</Text>
+          </TouchableOpacity>
+        </ScrollView>
+      </View>
+
+      {/* Content Area */}
+      <ScrollView style={styles.content}>
+        {/* Placeholder for video content */}
+        <View style={styles.videoPlaceholder}>
+          <Text style={styles.placeholderText}></Text>
+          <TouchableOpacity
+            style={styles.customButton}
+            onPress={handleCustomPress}
+            activeOpacity={0.7}
+          >
+            <Text style={styles.buttonText}>Button</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -14,7 +88,94 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+  },
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     alignItems: "center",
+    paddingHorizontal: 16,
+    paddingTop: Platform.OS === "ios" ? 8 : 16,
+    paddingBottom: 8,
+    borderBottomWidth: 1,
+    borderBottomColor: "#e0e0e0",
+    marginTop: Platform.OS === "android" ? 24 : 0,
+  },
+  headerLeft: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  youtubeText: {
+    fontSize: 20,
+    paddingLeft: 10,
+    fontWeight: "700",
+  },
+  headerRight: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  iconButton: {
+    padding: 8,
+    position: "relative",
+  },
+  badgeText: {
+    color: "white",
+    fontSize: 10,
+  },
+  categoriesContainer: {
+    height: 48,
+    borderBottomWidth: 1,
+    borderBottomColor: "#e0e0e0",
+  },
+  categories: {
+    paddingHorizontal: 12,
+    alignItems: "center",
+    height: "100%",
+  },
+  categoryButton: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 8,
+    backgroundColor: "#f0f0f0",
+    marginHorizontal: 4,
+    height: 32,
     justifyContent: "center",
+    marginVertical: 8,
+  },
+  selectedCategory: {
+    backgroundColor: "#000",
+  },
+  categoryText: {
+    color: "#666",
+    fontSize: 14,
+  },
+  selectedCategoryText: {
+    color: "#fff",
+  },
+  content: {
+    flex: 1,
+  },
+  videoPlaceholder: {
+    height: 200,
+    backgroundColor: "#f0f0f0",
+    margin: 10,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  placeholderText: {
+    color: "#666",
+  },
+  customButton: {
+    height: 200,
+    backgroundColor: "#f0f0f0",
+    margin: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    elevation: 5,
+  },
+  buttonText: {
+    color: "black",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });
