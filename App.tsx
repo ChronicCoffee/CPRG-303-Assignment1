@@ -66,7 +66,6 @@ export default function App() {
 
       {/* Content Area */}
       <ScrollView style={styles.content}>
-        {/* Placeholder for video content */}
         <View style={styles.videoPlaceholder}>
           <Text style={styles.placeholderText}></Text>
           <TouchableOpacity
