@@ -18,7 +18,7 @@ export default function App() {
     Alert.alert("Video Loading...");
   };
   const handleAlertPress = () => {
-    Alert.alert("Alert Button pressed");
+    Alert.alert("Alert Button Pressed.");
   };
   return (
     <SafeAreaView style={styles.container}>
@@ -112,6 +112,13 @@ export default function App() {
             </View>
           </View>
         </TouchableOpacity>
+         {/* Alert Button */}
+          <TouchableOpacity 
+          style={styles.alertButton}
+          onPress={handleAlertPress}
+          >
+          <Text style={styles.alertButtonText}>Alert</Text>
+        </TouchableOpacity>
       </ScrollView>
 
     {/* Footer Navigation */}
@@ -137,13 +144,6 @@ export default function App() {
                 <Text style={styles.footerText}>You</Text>
               </TouchableOpacity>
             </View>
-                    {/* Alert Button */}
-        <TouchableOpacity 
-          style={styles.alertButton}
-          onPress={handleAlertPress}
-        >
-          <Text style={styles.alertButtonText}>Alert</Text>
-        </TouchableOpacity>
           </View>
 
       <StatusBar style="auto" />
@@ -303,13 +303,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000',
     padding: 12,
     alignItems: 'center',
-    marginHorizontal: 16,
+    marginHorizontal: 150,
     marginVertical: 8,
     borderRadius: 8,
   },
   alertButtonText: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: '600',
+    color: '#fff',
+    fontSize: 14,
   },
 });
