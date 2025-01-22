@@ -30,10 +30,10 @@ export default function App() {
         </View>
         <View style={styles.headerRight}>
           <TouchableOpacity style={styles.iconButton}>
-            <Ionicons name="notifications-outline" size={24} color="black" />
+            <Ionicons name="notifications-outline" size={24} color="white" />
           </TouchableOpacity>
           <TouchableOpacity style={styles.iconButton}>
-            <Ionicons name="search" size={24} color="black" />
+            <Ionicons name="search" size={24} color="white" />
           </TouchableOpacity>
         </View>
       </View>
@@ -171,22 +171,22 @@ export default function App() {
     <View style={styles.footer}>
             <View style={styles.footerContent}>
               <TouchableOpacity style={styles.footerTab}>
-                <Ionicons name="home" size={24} color="black" />
+                <Ionicons name="home" size={24} color="white" />
                 <Text style={styles.footerText}>Home</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.footerTab}>
-                <Ionicons name="film-outline" size={24} color="black" />
+                <Ionicons name="film-outline" size={24} color="white" />
                 <Text style={styles.footerText}>Shorts</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.footerTabCenter}>
-                <Ionicons name="add-circle-outline" size={40} color="black" />
+                <Ionicons name="add-circle-outline" size={40} color="white" />
               </TouchableOpacity>
               <TouchableOpacity style={styles.footerTab}>
-                <Ionicons name="play-circle-outline" size={24} color="black" />
+                <Ionicons name="play-circle-outline" size={24} color="white" />
                 <Text style={styles.footerText}>Subscriptions</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.footerTab}>
-                <Ionicons name="person-outline" size={24} color="black" />
+                <Ionicons name="person-outline" size={24} color="white" />
                 <Text style={styles.footerText}>You</Text>
               </TouchableOpacity>
             </View>
@@ -200,17 +200,17 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#0F0F0F", // Dark background
+    backgroundColor: "#0F0F0F", 
   },
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 16,
-    paddingTop: Platform.OS === "ios" ? 8 : 16,
+    paddingTop: Platform.OS === "ios" ? 8 : 18,
     paddingBottom: 8,
     borderBottomWidth: 1,
-    borderBottomColor: "#282828", // Dark border
+    borderBottomColor: "#282828", 
     marginTop: Platform.OS === "android" ? 24 : 0,
   },
   headerLeft: {
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     paddingLeft: 10,
     fontWeight: "700",
-    color: "#FFFFFF", // White text
+    color: "#FFFFFF", 
   },
   headerRight: {
     flexDirection: "row",
@@ -245,17 +245,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 8,
-    backgroundColor: "#282828", // Dark button background
+    backgroundColor: "#282828", 
     marginHorizontal: 4,
     height: 32,
     justifyContent: "center",
     marginVertical: 8,
   },
   selectedCategory: {
-    backgroundColor: "#FF0000", // YouTube red for selected category
+    backgroundColor: "#FF0000", 
   },
   categoryText: {
-    color: "#AAAAAA", // Lighter gray for text
+    color: "#AAAAAA", 
     fontSize: 14,
   },
   selectedCategoryText: {
