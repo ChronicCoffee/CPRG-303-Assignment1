@@ -68,7 +68,7 @@ export default function App() {
       </View>
 
       {/* Content Area */}
-      <ScrollView style={styles.content}>
+            <ScrollView style={styles.content}>
         {/* Video Item 1 */}
         <TouchableOpacity onPress={handleCustomPress}>
           <View style={styles.videoItem}>
@@ -112,14 +112,60 @@ export default function App() {
             </View>
           </View>
         </TouchableOpacity>
-         {/* Alert Button */}
-          <TouchableOpacity 
+
+        {/* Video Item 3 */}
+        <TouchableOpacity onPress={handleCustomPress}>
+          <View style={styles.videoItem}>
+            <Image
+              source={require('./assets/placeholder-3.png')}
+              style={styles.thumbnail}
+            />
+            <View style={styles.videoTime}>
+              <Text style={styles.timeText}>23:12</Text>
+            </View>
+            <View style={styles.videoDetails}>
+              <View style={styles.videoText}>
+                <Text style={styles.videoTitle} numberOfLines={2}>
+                  Exploring Hidden Spots in Tokyo!
+                </Text>
+                <Text style={styles.channelName}>TravelVlogs</Text>
+                <Text style={styles.videoMeta}>120K views • 3 weeks ago</Text>
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
+
+        {/* Video Item 4 */}
+        <TouchableOpacity onPress={handleCustomPress}>
+          <View style={styles.videoItem}>
+            <Image
+              source={require('./assets/placeholder-4.png')}
+              style={styles.thumbnail}
+            />
+            <View style={styles.videoTime}>
+              <Text style={styles.timeText}>5:45</Text>
+            </View>
+            <View style={styles.videoDetails}>
+              <View style={styles.videoText}>
+                <Text style={styles.videoTitle} numberOfLines={2}>
+                  Easy Cooking Recipes for Beginners
+                </Text>
+                <Text style={styles.channelName}>ChefMaster</Text>
+                <Text style={styles.videoMeta}>300K views • 1 month ago</Text>
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
+
+        {/* Alert Button */}
+        <TouchableOpacity 
           style={styles.alertButton}
           onPress={handleAlertPress}
-          >
+        >
           <Text style={styles.alertButtonText}>Alert</Text>
         </TouchableOpacity>
       </ScrollView>
+
 
     {/* Footer Navigation */}
     <View style={styles.footer}>
