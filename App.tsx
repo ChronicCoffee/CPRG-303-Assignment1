@@ -78,6 +78,31 @@ export default function App() {
         </View>
       </ScrollView>
 
+    {/* Footer Navigation */}
+    <View style={styles.footer}>
+            <View style={styles.footerContent}>
+              <TouchableOpacity style={styles.footerTab}>
+                <Ionicons name="home" size={24} color="black" />
+                <Text style={styles.footerText}>Home</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.footerTab}>
+                <Ionicons name="film-outline" size={24} color="black" />
+                <Text style={styles.footerText}>Shorts</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.footerTabCenter}>
+                <Ionicons name="add-circle-outline" size={40} color="black" />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.footerTab}>
+                <Ionicons name="play-circle-outline" size={24} color="black" />
+                <Text style={styles.footerText}>Subscriptions</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.footerTab}>
+                <Ionicons name="person-outline" size={24} color="black" />
+                <Text style={styles.footerText}>You</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -176,5 +201,33 @@ const styles = StyleSheet.create({
     color: "black",
     fontSize: 16,
     fontWeight: "bold",
+  },
+  footer: {
+    borderTopWidth: 1,
+    borderTopColor: "#e0e0e0",
+    backgroundColor: "#fff",
+  },
+  footerContent: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    paddingVertical: 4,
+    paddingHorizontal: 16,
+  },
+  footerTab: {
+    alignItems: "center",
+    flex: 1,
+    paddingVertical: 8,
+  },
+  footerTabCenter: {
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+    paddingVertical: 4,
+  },
+  footerText: {
+    fontSize: 10,
+    marginTop: 4,
+    color: "#000",
   },
 });
