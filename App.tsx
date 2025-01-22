@@ -15,7 +15,7 @@ import { Ionicons } from "@expo/vector-icons";
 
 export default function App() {
   const handleCustomPress = () => {
-    Alert.alert("Button Pressed.");
+    Alert.alert("Video Loading...");
   };
   return (
     <SafeAreaView style={styles.container}>
@@ -66,16 +66,49 @@ export default function App() {
 
       {/* Content Area */}
       <ScrollView style={styles.content}>
-        <View style={styles.videoPlaceholder}>
-          <Text style={styles.placeholderText}></Text>
-          <TouchableOpacity
-            style={styles.customButton}
-            onPress={handleCustomPress}
-            activeOpacity={0.7}
-          >
-            <Text style={styles.buttonText}>Button</Text>
-          </TouchableOpacity>
-        </View>
+        {/* Video Item 1 */}
+        <TouchableOpacity onPress={handleCustomPress}>
+          <View style={styles.videoItem}>
+            <Image
+              source={require('./assets/placeholder-1.jpg')}
+              style={styles.thumbnail}
+            />
+            <View style={styles.videoTime}>
+              <Text style={styles.timeText}>15:48</Text>
+            </View>
+            <View style={styles.videoDetails}>
+              <View style={styles.videoText}>
+                <Text style={styles.videoTitle} numberOfLines={2}>
+                  Heading to a Local Camera Shop in NYC!!
+                </Text>
+                <Text style={styles.channelName}>Photoflics</Text>
+                <Text style={styles.videoMeta}>50K views • 1 week ago</Text>
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
+
+        {/* Video Item 2 */}
+        <TouchableOpacity onPress={handleCustomPress}>
+          <View style={styles.videoItem}>
+            <Image
+              source={require('./assets/placeholder-2.jpg')}
+              style={styles.thumbnail}
+            />
+            <View style={styles.videoTime}>
+              <Text style={styles.timeText}>1:20:36</Text>
+            </View>
+            <View style={styles.videoDetails}>
+              <View style={styles.videoText}>
+                <Text style={styles.videoTitle} numberOfLines={2}>
+                  Night Time Adventure in Chicago
+                </Text>
+                <Text style={styles.channelName}>City Travel</Text>
+                <Text style={styles.videoMeta}>250K views • 2 month ago</Text>
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
       </ScrollView>
 
     {/* Footer Navigation */}
@@ -177,30 +210,7 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   content: {
-    flex: 1,
-  },
-  videoPlaceholder: {
-    height: 200,
-    backgroundColor: "#f0f0f0",
-    margin: 10,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  placeholderText: {
-    color: "#666",
-  },
-  customButton: {
-    height: 200,
-    backgroundColor: "#f0f0f0",
-    margin: 10,
-    justifyContent: "center",
-    alignItems: "center",
-    elevation: 5,
-  },
-  buttonText: {
-    color: "black",
-    fontSize: 16,
-    fontWeight: "bold",
+    flex:1,
   },
   footer: {
     borderTopWidth: 1,
@@ -229,5 +239,54 @@ const styles = StyleSheet.create({
     fontSize: 10,
     marginTop: 4,
     color: "#000",
+  },
+  videoItem: {
+    marginBottom: 16,
+  },
+  thumbnail: {
+    width: '100%',
+    height: 200,
+    backgroundColor: '#e0e0e0',
+  },
+  videoTime: {
+    position: 'absolute',
+    bottom: 8,
+    right: 8,
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    padding: 4,
+    borderRadius: 4,
+  },
+  timeText: {
+    color: 'white',
+    fontSize: 12,
+    fontWeight: '500',
+  },
+  videoDetails: {
+    flexDirection: 'row',
+    padding: 12,
+  },
+  channelImage: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: '#e0e0e0',
+  },
+  videoText: {
+    flex: 1,
+  },
+  videoTitle: {
+    fontSize: 14,
+    fontWeight: '500',
+    marginBottom: 4,
+    color: '#000',
+  },
+  channelName: {
+    fontSize: 12,
+    color: '#606060',
+    marginBottom: 2,
+  },
+  videoMeta: {
+    fontSize: 12,
+    color: '#606060',
   },
 });
