@@ -17,6 +17,9 @@ export default function App() {
   const handleCustomPress = () => {
     Alert.alert("Video Loading...");
   };
+  const handleAlertPress = () => {
+    Alert.alert("Alert Button pressed");
+  };
   return (
     <SafeAreaView style={styles.container}>
       {/* Header */}
@@ -104,7 +107,7 @@ export default function App() {
                   Night Time Adventure in Chicago
                 </Text>
                 <Text style={styles.channelName}>City Travel</Text>
-                <Text style={styles.videoMeta}>250K views • 2 month ago</Text>
+                <Text style={styles.videoMeta}>250K views • 2 months ago</Text>
               </View>
             </View>
           </View>
@@ -134,6 +137,13 @@ export default function App() {
                 <Text style={styles.footerText}>You</Text>
               </TouchableOpacity>
             </View>
+                    {/* Alert Button */}
+        <TouchableOpacity 
+          style={styles.alertButton}
+          onPress={handleAlertPress}
+        >
+          <Text style={styles.alertButtonText}>Alert</Text>
+        </TouchableOpacity>
           </View>
 
       <StatusBar style="auto" />
@@ -288,5 +298,18 @@ const styles = StyleSheet.create({
   videoMeta: {
     fontSize: 12,
     color: '#606060',
+  },
+  alertButton: {
+    backgroundColor: '#000000',
+    padding: 12,
+    alignItems: 'center',
+    marginHorizontal: 16,
+    marginVertical: 8,
+    borderRadius: 8,
+  },
+  alertButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '600',
   },
 });
