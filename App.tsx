@@ -41,16 +41,12 @@ export default function App() {
       {/* Categories */}
       <View style={styles.categoriesContainer}>
         <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
+          horizontal  
+          showsHorizontalScrollIndicator={true}
           contentContainerStyle={styles.categories}
         >
-          <TouchableOpacity
-            style={[styles.categoryButton, styles.selectedCategory]}
-          >
-            <Text style={[styles.categoryText, styles.selectedCategoryText]}>
-              All
-            </Text>
+          <TouchableOpacity style={[styles.categoryButton, styles.selectedCategory]}>
+            <Text style={[styles.categoryText, styles.selectedCategoryText]}>All</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.categoryButton}>
             <Text style={styles.categoryText}>Trending</Text>
@@ -62,7 +58,13 @@ export default function App() {
             <Text style={styles.categoryText}>Gaming</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.categoryButton}>
-            <Text style={styles.categoryText}>News</Text>
+            <Text style={styles.categoryText}>Weather</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.categoryButton}>
+            <Text style={styles.categoryText}>Sports</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.categoryButton}>
+            <Text style={styles.categoryText}>Random</Text>
           </TouchableOpacity>
         </ScrollView>
       </View>
