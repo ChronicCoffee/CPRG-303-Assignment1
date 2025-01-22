@@ -200,7 +200,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#0F0F0F", // Dark background
   },
   header: {
     flexDirection: "row",
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === "ios" ? 8 : 16,
     paddingBottom: 8,
     borderBottomWidth: 1,
-    borderBottomColor: "#e0e0e0",
+    borderBottomColor: "#282828", // Dark border
     marginTop: Platform.OS === "android" ? 24 : 0,
   },
   headerLeft: {
@@ -221,6 +221,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     paddingLeft: 10,
     fontWeight: "700",
+    color: "#FFFFFF", // White text
   },
   headerRight: {
     flexDirection: "row",
@@ -229,16 +230,11 @@ const styles = StyleSheet.create({
   },
   iconButton: {
     padding: 8,
-    position: "relative",
-  },
-  badgeText: {
-    color: "white",
-    fontSize: 10,
   },
   categoriesContainer: {
     height: 48,
     borderBottomWidth: 1,
-    borderBottomColor: "#e0e0e0",
+    borderBottomColor: "#282828",
   },
   categories: {
     paddingHorizontal: 12,
@@ -249,29 +245,29 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 8,
-    backgroundColor: "#f0f0f0",
+    backgroundColor: "#282828", // Dark button background
     marginHorizontal: 4,
     height: 32,
     justifyContent: "center",
     marginVertical: 8,
   },
   selectedCategory: {
-    backgroundColor: "#000",
+    backgroundColor: "#FF0000", // YouTube red for selected category
   },
   categoryText: {
-    color: "#666",
+    color: "#AAAAAA", // Lighter gray for text
     fontSize: 14,
   },
   selectedCategoryText: {
-    color: "#fff",
+    color: "#FFFFFF",
   },
   content: {
-    flex:1,
+    flex: 1,
   },
   footer: {
     borderTopWidth: 1,
-    borderTopColor: "#e0e0e0",
-    backgroundColor: "#fff",
+    borderTopColor: "#282828",
+    backgroundColor: "#0F0F0F",
   },
   footerContent: {
     flexDirection: "row",
@@ -294,67 +290,61 @@ const styles = StyleSheet.create({
   footerText: {
     fontSize: 10,
     marginTop: 4,
-    color: "#000",
+    color: "#FFFFFF",
   },
   videoItem: {
     marginBottom: 16,
   },
   thumbnail: {
-    width: '100%',
+    width: "100%",
     height: 200,
-    backgroundColor: '#e0e0e0',
+    backgroundColor: "#282828",
   },
   videoTime: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 8,
     right: 8,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    backgroundColor: "rgba(0, 0, 0, 0.8)",
     padding: 4,
     borderRadius: 4,
   },
   timeText: {
-    color: 'white',
+    color: "white",
     fontSize: 12,
-    fontWeight: '500',
+    fontWeight: "500",
   },
   videoDetails: {
-    flexDirection: 'row',
+    flexDirection: "row",
     padding: 12,
-  },
-  channelImage: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    backgroundColor: '#e0e0e0',
   },
   videoText: {
     flex: 1,
   },
   videoTitle: {
     fontSize: 14,
-    fontWeight: '500',
+    fontWeight: "500",
     marginBottom: 4,
-    color: '#000',
+    color: "#FFFFFF",
   },
   channelName: {
     fontSize: 12,
-    color: '#606060',
+    color: "#AAAAAA",
     marginBottom: 2,
   },
   videoMeta: {
     fontSize: 12,
-    color: '#606060',
+    color: "#AAAAAA",
   },
   alertButton: {
-    backgroundColor: '#000000',
+    backgroundColor: "#FF0000",
     padding: 12,
-    alignItems: 'center',
+    alignItems: "center",
     marginHorizontal: 150,
     marginVertical: 8,
     borderRadius: 8,
   },
   alertButtonText: {
-    color: '#fff',
+    color: "#FFFFFF",
     fontSize: 14,
   },
 });
